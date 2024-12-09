@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white dark:bg-dark text-dark dark:text-white;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.6s ease-out forwards;
+}
+
+.animate-slide-in {
+  animation: slide-in 0.6s ease-out forwards;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s infinite;
+}
+
+.animate-scroll {
+  animation: scroll 40s linear infinite;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply px-6 py-3 bg-primary text-white rounded-full dark:border-white hover:bg-primary-hover transition-all duration-300 hover:scale-105;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 border-2 border-primary text-primary dark:border-white dark:text-white rounded-full hover:bg-primary hover:text-white dark:hover:bg-white dark:hover:text-dark transition-all duration-300 hover:scale-105;
+}
+
+.card {
+  @apply bg-white dark:bg-dark shadow-lg rounded-2xl border border-light dark:border-secondary/20 overflow-hidden hover:scale-[1.02] transition-all duration-300;
+}
+
+.section-title {
+  @apply text-4xl font-bold text-center mb-12 text-primary dark:text-white;
+}
+
+.section-subtitle {
+  @apply text-center text-secondary dark:text-light font-semibold mb-2;
+}
